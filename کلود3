@@ -1,0 +1,77 @@
+# CLAUDE.md — Creative Coding Rules
+
+Put this file in the root of the repo. Claude reads it before every task.
+
+## Core Rule
+
+Never ship the generic version. Before writing any code, decide on ONE bold idea (a concept, a mood, a signature detail) and build everything around it. If the result looks like something a thousand other projects already have, throw it away and start again.
+
+## Banned Defaults
+
+- Purple-to-blue gradients on white, centered hero + three feature cards, stock card grids
+- Inter / Roboto / Arial / system fonts as the "design choice"
+- Default shadows, default rounded corners, default Bootstrap/Tailwind look
+- Lorem ipsum, placeholder names, grey boxes standing in for art
+- Copy-pasting the same layout, palette, or animation across projects
+- Dumping everything into one giant file with no structure
+
+## Before You Code
+
+1. Pick a direction in one line (e.g. "neon arcade," "paper cut-out," "dark cinematic," "hand-drawn chaos").
+2. Choose a palette of 3-5 colors with one sharp accent. Define them as CSS variables / constants.
+3. Choose 1 display font + 1 body font with real personality. Include a fallback stack.
+4. Decide the signature moment: the one animation or interaction people will remember.
+5. Then write code.
+
+## Websites
+
+- Strong visual hierarchy: huge type next to tiny type, tension between dense and empty space.
+- Break the grid on purpose: overlap, rotate, offset, layer.
+- Backgrounds with depth: gradients, grain, patterns, glow, blur, layered shapes. Never a flat color by default.
+- Every section gets its own layout rhythm. No two sections should feel identical.
+- Hover, focus, and scroll states must feel alive: micro-interactions on every button and link.
+- Fully responsive (mobile first). Support RTL when the content is Persian/Arabic, with proper fonts and mirrored layout.
+- Accessible: real contrast, keyboard focus, `prefers-reduced-motion` respected.
+
+## Animation
+
+- Motion has a purpose: guide the eye, give weight, create personality.
+- Use easing with character (spring, overshoot, anticipation). Never plain `linear` or default `ease` unless intentional.
+- Stagger and choreograph: elements enter in sequence, not all at once.
+- One orchestrated page-load or scene-intro beats ten scattered effects.
+- Layer techniques: CSS keyframes, SVG, canvas, WebGL/Three.js, scroll-linked motion. Choose what fits the idea.
+- Keep it smooth: animate `transform` and `opacity`, avoid layout thrash, target 60fps.
+
+## Skins (characters, textures, themes, UI skins)
+
+- Give every skin a clear identity: silhouette, color story, one signature detail.
+- Strong readable shapes first, detail second. It must read well at small size.
+- Consistent style across a set, but each item clearly different from the others.
+- Build a limited palette, then add highlights, shadows, and accents with intention.
+- No recolors passed off as new skins. Change shape, pattern, or concept, not just hue.
+- Name skins with personality.
+
+## Code Quality
+
+- Clean structure: separate HTML / CSS / JS (or components), clear names, short functions.
+- Config at the top: colors, speeds, sizes, text. Easy to tweak without digging.
+- Comments only where the idea is not obvious.
+- No dead code, no unused libraries, no half-finished features.
+- It must run on the first try. Test mentally before delivering.
+
+## Working Style
+
+- Do the work. Don't write long explanations unless asked.
+- Don't ask a pile of questions. Make a strong creative choice and build it.
+- Be ambitious: if a simple version and a striking version are both possible, build the striking one.
+- After finishing, do one polish pass: spacing, timing, details, edge cases.
+- Reply in the language the user writes in.
+
+## Final Check
+
+Before delivering, ask:
+- Would someone remember this a day later?
+- Does it have a point of view, or does it look like every template?
+- Is there one detail that makes it feel handmade?
+
+If any answer is no, push further.
