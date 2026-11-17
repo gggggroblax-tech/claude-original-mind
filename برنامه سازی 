@@ -1,0 +1,96 @@
+# CLAUDE.md — Game & App Coding Rules
+
+Put this in the root of the repo (rename to `CLAUDE.md`, or merge it with the creative-coding file). Claude reads it before every task.
+
+## Core Rule
+
+Build something that feels finished, not a prototype. Every game and every app needs a clear idea, a polished first minute, and at least one detail that makes it feel unique. No generic clones, no placeholder-quality work.
+
+## Before You Code
+
+1. State the idea in one line: what is it, who plays/uses it, what is the hook.
+2. Games: define the core loop (do → get feedback → get rewarded → repeat). Apps: define the one main job it does perfectly.
+3. Pick a visual style and stick to it (low-poly, neon, pixel, cartoon, clean minimal, dark cinematic).
+4. Plan the file structure first. Then code.
+5. Deliver a version that runs on the first try, then polish.
+
+## Games
+
+### Gameplay
+- The first 30 seconds must be fun. Start the action fast, teach by doing, not by text walls.
+- Clear goal, clear feedback, clear failure and win states.
+- Difficulty ramps up smoothly. Scale enemies, speed, and rewards by level.
+- Add progression: levels, upgrades, unlocks, coins, skins, missions.
+- Every run should feel a little different (randomness, events, variety).
+
+### Game Feel (juice)
+- Every action gets feedback: screen shake, hit flash, particles, sound, squash and stretch, floating numbers.
+- Smooth movement: acceleration, easing, camera lag/follow, no robotic snapping.
+- Satisfying sounds for every important action. Music that fits the mood, with a mute toggle.
+- Cameras, lighting, fog, and post effects matter as much as mechanics.
+
+### Controls
+- Support keyboard + mouse AND touch (virtual joystick, tap buttons) unless told otherwise.
+- Responsive controls with no input lag. Rebindable or clearly shown.
+- Pause, restart, and back-to-menu always reachable.
+
+### 3D Games
+- Use Three.js (or the engine the repo already uses). Pin library versions.
+- Lighting first: ambient + directional + shadows, a sky or fog, nice materials. No flat grey scenes.
+- Keep it fast: reuse geometries/materials, instancing for repeated objects, limit draw calls, cap pixel ratio, dispose unused assets.
+- Collisions and AI must be simple, stable, and cheap. Enemies should path around obstacles, not get stuck.
+- Handle loading models gracefully: progress bar, fallback if a model fails.
+
+### 2D Games
+- Fixed timestep or delta-time movement so speed is the same on every device.
+- Layered backgrounds with parallax. Animated sprites, not static images.
+
+### Menus & Flow
+- Real main menu: logo, play, settings, credits. Game-over screen with score and retry.
+- Settings: sound, music, quality, controls.
+- Save progress (best score, coins, unlocks, settings) so players come back.
+- Credits screen when the owner gives a name or team.
+
+## Apps
+
+- One clear purpose. Remove anything that doesn't serve it.
+- Fast: instant feedback on every tap, skeleton/loading states, no frozen screens.
+- Handle every state: empty, loading, error, offline, success. No blank pages.
+- Forms: validate live, clear error messages, never lose the user's input.
+- Navigation obvious in 3 seconds. Thumb-friendly on mobile (big tap targets, bottom actions).
+- Persistent data saved safely; export/backup when it matters.
+- Dark and light mode. Respect `prefers-reduced-motion`.
+- Accessible: contrast, labels, focus order, readable sizes.
+
+## Design
+
+- Never the default look: no stock gradients, no template layouts, no default fonts as a "choice."
+- One palette (3-5 colors + a sharp accent) and 1-2 fonts with personality, defined once in variables.
+- Polished UI: consistent spacing, real icons, smooth transitions, animated buttons and panels.
+- Fully responsive. Support Persian/Arabic RTL with proper fonts and mirrored layout when the content needs it.
+
+## Code Quality
+
+- Clear structure: separate modules for input, game state, rendering, UI, audio, data.
+- Config at the top (speeds, sizes, colors, prices, text) so it's easy to tweak.
+- One game loop. No leaked listeners, timers, or objects. Clean up on restart.
+- Descriptive names, short functions, comments only where the idea isn't obvious.
+- No dead code, unused libraries, or half-built features.
+- Errors never crash the whole thing. Fail gracefully and keep running.
+
+## Working Style
+
+- Do the work. Don't write long explanations unless asked.
+- Don't ask a pile of questions. Make a strong choice and build it.
+- Be ambitious: if a basic version and an impressive version are both possible, build the impressive one.
+- Finish with one polish pass: performance, edge cases, feel, spacing, sounds.
+- Reply in the language the user writes in.
+
+## Final Check
+
+- Is the first minute fun/useful and smooth?
+- Does it run on both phone and computer?
+- Is there juice, polish, and one memorable detail?
+- Would the owner be proud to publish it today?
+
+If any answer is no, keep going.
